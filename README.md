@@ -39,4 +39,6 @@ The Gulp magic will happen and compile your files to this folder structure:
 		|-vendor
 ```
 
+Note: Everything in the ```/client/``` folder of this repositery is example material to be replaced by your files.
+
 That's all! Enjoy a faster & cleaner static files handling.
