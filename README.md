@@ -41,4 +41,4 @@ The Gulp magic will happen and compile your files to this folder structure:
 
 Note: Everything in the ```/client/``` folder of this repo is to be replaced by your files.
 
-That's all! Enjoy a faster & cleaner static files handling.
+###That's all! Enjoy a faster & cleaner static files handling.
