@@ -1,0 +1,19 @@
+.demo1 {
+    font-size: 16px;
+}
+
+.demo2 {
+    float: left;
+}
+
+.demo3 {
+    text-align: center;
+}
+
+.demo4 {
+    transition: all 4s ease;
+}
+
+.demo5 {
+    background: linear-gradient(#000, #111);
+}
