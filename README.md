@@ -1,15 +1,15 @@
 # apex-gulpfile
-This is a sample Gulpfile for a developer who needs only basic handling of JavaScript, CSS and Vendor (3rd party) files.
+This is a super basic Gulpfile for anyone who only needs JavaScript, CSS and vendor (3rd party) file handling.
 
-See http://vmorneau.me/my-first-blog-post/
+See http://vmorneau.me/basic-gulpfile/ for more info.
 
 #Features
 - JS concatenation
-- CSS concatenation
 - JS minification
+- CSS concatenation
 - CSS minification
-- CSS Autoprefixer
-- Output both minified and un-minified 
+- CSS autoprefixer
+- Output of both minified and un-minified 
 - Filesize indicator
 - User friendly error handling
 
@@ -39,6 +39,6 @@ The Gulp magic will happen and compile your files to this folder structure:
 		|-vendor
 ```
 
-Note: Everything in the ```/client/``` folder of this repositery is example material to be replaced by your files.
+Note: Everything in the ```/client/``` folder of this repo is to be replaced by your files.
 
 That's all! Enjoy a faster & cleaner static files handling.
