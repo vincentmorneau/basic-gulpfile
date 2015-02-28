@@ -4,11 +4,12 @@ This is a super basic Gulpfile for anyone who only needs JavaScript, CSS and ven
 See http://vmorneau.me/basic-gulpfile/ for more info.
 
 #Features
-- JS concatenation
-- JS minification
 - CSS concatenation
 - CSS minification
 - CSS autoprefixer
+- JS concatenation
+- JS minification
+- IMG optimization
 - Output of both minified and un-minified 
 - Filesize indicator
 - User friendly error handling
@@ -25,6 +26,7 @@ From the root folder, You can create, edit or delete any files in:
 |-/client
 	|-/assets
 		|-css
+		|-img
 		|-js
 		|-vendor
 ```
@@ -35,6 +37,7 @@ The Gulp magic will happen and compile your files to this folder structure:
 |-/build
 	|-/assets
 		|-css
+		|-img
 		|-js
 		|-vendor
 ```

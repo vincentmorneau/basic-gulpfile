@@ -20,6 +20,7 @@ var paths = {
 var assets = {
     js: 'assets/js/',
     css: 'assets/css/',
+    img: 'assets/img/',
     vendor: 'assets/vendor/'
 };
 
@@ -68,6 +69,13 @@ gulp.task('css', function() {
         .pipe(gulp.dest(paths.build + assets.css));
 });
 
+// Optimizes img files
+gulp.task('img', function() {
+    return gulp.src(paths.client + assets.img + files.all)
+        .pipe(plugins.imagemin())
+        .pipe(gulp.dest(paths.build + assets.img));
+});
+
 // Copies vendor files as is
 gulp.task('vendor', function() {
     return gulp.src(paths.client + assets.vendor + files.all)
@@ -78,12 +86,13 @@ gulp.task('vendor', function() {
 gulp.task('watch', function() {
     gulp.watch(paths.client + assets.js + files.js, ['js']);
     gulp.watch(paths.client + assets.css + files.css, ['css']);
+    gulp.watch(paths.client + assets.img + files.all, ['img']);
     gulp.watch(paths.client + assets.vendor + files.all, ['vendor']);
 });
 
 // Default task: builds your app
 gulp.task('default', function() {
-    runSequence('clean', ['js', 'css', 'vendor', 'watch'], function() {
+    runSequence('clean', ['js', 'css', 'img', 'vendor', 'watch'], function() {
         console.log("Successfully built.");
     });
 });
