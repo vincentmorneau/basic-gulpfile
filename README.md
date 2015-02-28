@@ -1,16 +1,14 @@
 # apex-gulpfile
-This is a super basic Gulpfile for anyone who only needs JavaScript, CSS and vendor (3rd party) file handling.
+This is a super basic Gulpfile for anyone who only needs JavaScript, CSS, images and vendor files (3rd party) handling.
 
 See http://vmorneau.me/basic-gulpfile/ for more info.
 
 #Features
-- CSS concatenation
-- CSS minification
-- CSS autoprefixer
-- JS concatenation
-- JS minification
-- IMG optimization
-- Output of both minified and un-minified 
+- CSS (concatenation, minification, autoprefixer)
+- JS (concatenation, minification)
+- IMG (optimization)
+- Vendor files (copy)
+- Output of minified and un-minified JS & CSS
 - Filesize indicator
 - User friendly error handling
 
