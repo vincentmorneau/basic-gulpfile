@@ -1,8 +1,9 @@
 {
   "name": "basic-gulpfile",
   "author": "Vincent Morneau",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A basic Gulpfile",
+  "license":"MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/vincentmorneau/basic-gulpfile.git"
@@ -11,20 +12,19 @@
     "start": "gulp"
   },
   "devDependencies": {
-    "gulp": "3.8.x",
+    "gulp": "3.9.x",
     "gulp-util": "3.0.x",
-    "gulp-plumber": "0.6.x",
-    "gulp-concat": "2.5.x",
-    "gulp-jshint":"1.9.x",
-    "jshint-stylish": "1.0.x",
-    "gulp-uglify": "1.1.x",
+    "gulp-plumber": "1.0.x",
+    "gulp-concat": "2.6.x",
+    "gulp-jshint": "1.11.x",
+    "jshint-stylish": "2.0.x",
+    "gulp-uglify": "1.4.x",
     "gulp-rename": "1.2.x",
-    "gulp-size": "1.2.x",
-    "gulp-minify-css": "0.4.x",
-    "gulp-autoprefixer": "2.1.x",
-    "gulp-imagemin": "2.2.x",
-    "gulp-load-plugins":"0.8.x",
-    "del": "1.1.x",
-    "run-sequence": "1.0.x"
+    "gulp-size": "2.0.x",
+    "gulp-minify-css": "1.2.x",
+    "gulp-autoprefixer": "3.0.x",
+    "gulp-load-plugins": "~1.0.0-rc.1",
+    "del": "2.0.x",
+    "run-sequence": "1.1.x"
   }
 }

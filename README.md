@@ -3,6 +3,16 @@ This is a super basic Gulpfile for anyone who only needs JavaScript, CSS, images
 
 See http://vmorneau.me/basic-gulpfile/ for more info.
 
+#Changelog
+##v1.2
+- Updated dependencies
+- Changed terminology
+    - `client` to `src`
+    - `build` to `dist`
+- Removed image minification package
+    - was not generic enough for this project
+- Removed assets intermediate folder 
+
 #Features
 - CSS (concatenation, minification, autoprefixer)
 - JS (concatenation, minification)
@@ -21,25 +31,23 @@ See http://vmorneau.me/basic-gulpfile/ for more info.
 #How to use
 From the root folder, You can create, edit or delete any files in:
 ```
-|-/client
-	|-/assets
-		|-css
-		|-img
-		|-js
-		|-vendor
+|-/src
+    |-css
+    |-img
+    |-js
+    |-lib
 ```
 
 The Gulp magic will happen and compile your files to this folder structure:
 
 ```
-|-/build
-	|-/assets
-		|-css
-		|-img
-		|-js
-		|-vendor
+|-/dist
+    |-css
+    |-img
+    |-js
+    |-lib
 ```
 
-Note: Everything in the ```/client/``` folder of this repo is to be replaced by your files.
+Note: Everything in the ```/src/``` folder of this repo is to be replaced by your files.
 
 ###That's all! Enjoy a faster & cleaner static files handling.

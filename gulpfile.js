@@ -1,7 +1,7 @@
 // BASIC GULPFILE
 // - - - - - - - - - - - - - - -
-// This file processes all of the assets in the "client" folder
-// and outputs the finished files in the "build" folder.
+// This file processes all of the assets in the "src" folder
+// and outputs the finished files in the "dist" folder.
 
 // 1. LIBRARIES
 // - - - - - - - - - - - - - - -
@@ -13,15 +13,15 @@ var runSequence = require('run-sequence');
 // 2. SETTINGS VARIABLES
 // - - - - - - - - - - - - - - -
 var paths = {
-    client: 'client/',
-    build: 'build/'
+    src: 'src/',
+    dist: 'dist/'
 };
 
 var assets = {
-    js: 'assets/js/',
-    css: 'assets/css/',
-    img: 'assets/img/',
-    vendor: 'assets/vendor/'
+    js: 'js/',
+    css: 'css/',
+    img: 'img/',
+    lib: 'lib/'
 };
 
 var files = {
@@ -32,67 +32,66 @@ var files = {
 
 // 3. TASKS
 // - - - - - - - - - - - - - - -
-// Cleans the build directory
-gulp.task('clean', function(cb) {
-    del([paths.build], cb);
+// Cleans the dist directory
+gulp.task('clean', function() {
+    del([paths.dist]);
 });
 
 // Compiles and copies the JavaScript
 gulp.task('js', function() {
-    return gulp.src(paths.client + assets.js + files.js)
+    return gulp.src(paths.src + assets.js + files.js)
         .pipe(plugins.plumber())
         .pipe(plugins.jshint())
         .pipe(plugins.jshint.reporter('jshint-stylish'))
         .pipe(plugins.concat('app.js'))
         .pipe(plugins.size({"showFiles":true}))
-        .pipe(gulp.dest(paths.build + assets.js))
+        .pipe(gulp.dest(paths.dist + assets.js))
         .pipe(plugins.uglify())
         .on('error', function(e) { 
             console.log("Uglify did not complete."); 
         })
         .pipe(plugins.rename({suffix: '.min'}))
         .pipe(plugins.size({"showFiles":true}))
-        .pipe(gulp.dest(paths.build + assets.js));
+        .pipe(gulp.dest(paths.dist + assets.js));
 });
 
 // Compiles scss and minifies CSS
 gulp.task('css', function() {
-    return gulp.src(paths.client + assets.css + files.css)
+    return gulp.src(paths.src + assets.css + files.css)
         .pipe(plugins.plumber())
         .pipe(plugins.autoprefixer())
         .pipe(plugins.concat('app.css'))
         .pipe(plugins.size({"showFiles":true}))
-        .pipe(gulp.dest(paths.build + assets.css))
+        .pipe(gulp.dest(paths.dist + assets.css))
         .pipe(plugins.minifyCss())
         .pipe(plugins.rename({suffix: '.min'}))
         .pipe(plugins.size({"showFiles":true}))
-        .pipe(gulp.dest(paths.build + assets.css));
+        .pipe(gulp.dest(paths.dist + assets.css));
 });
 
 // Optimizes img files
 gulp.task('img', function() {
-    return gulp.src(paths.client + assets.img + files.all)
-        .pipe(plugins.imagemin())
-        .pipe(gulp.dest(paths.build + assets.img));
+    return gulp.src(paths.src + assets.img + files.all)
+        .pipe(gulp.dest(paths.dist + assets.img));
 });
 
-// Copies vendor files as is
-gulp.task('vendor', function() {
-    return gulp.src(paths.client + assets.vendor + files.all)
-        .pipe(gulp.dest(paths.build + assets.vendor));
+// Copies lib files as is
+gulp.task('lib', function() {
+    return gulp.src(paths.src + assets.lib + files.all)
+        .pipe(gulp.dest(paths.dist + assets.lib));
 });
 
 // Watch for changes and recompiles
 gulp.task('watch', function() {
-    gulp.watch(paths.client + assets.js + files.js, ['js']);
-    gulp.watch(paths.client + assets.css + files.css, ['css']);
-    gulp.watch(paths.client + assets.img + files.all, ['img']);
-    gulp.watch(paths.client + assets.vendor + files.all, ['vendor']);
+    gulp.watch(paths.src + assets.js + files.js, ['js']);
+    gulp.watch(paths.src + assets.css + files.css, ['css']);
+    gulp.watch(paths.src + assets.img + files.all, ['img']);
+    gulp.watch(paths.src + assets.lib + files.all, ['lib']);
 });
 
 // Default task: builds your app
 gulp.task('default', function() {
-    runSequence('clean', ['js', 'css', 'img', 'vendor', 'watch'], function() {
+    runSequence('clean', ['js', 'css', 'img', 'lib', 'watch'], function() {
         console.log("Successfully built.");
     });
 });

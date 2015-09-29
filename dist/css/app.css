@@ -1,0 +1,42 @@
+.demo1 {
+    font-size: 16px;
+}
+
+.demo2 {
+    float: left;
+}
+
+.demo3 {
+    text-align: center;
+}
+
+.demo4 {
+    -webkit-transition: all 4s ease;
+            transition: all 4s ease;
+}
+
+.demo5 {
+    background: -webkit-linear-gradient(#000, #111);
+    background: linear-gradient(#000, #111);
+}
+.demo6 {
+    font-size: 16px;
+}
+
+.demo7 {
+    float: left;
+}
+
+.demo8 {
+    text-align: center;
+}
+
+.demo9 {
+    -webkit-transition: all 4s ease;
+            transition: all 4s ease;
+}
+
+.demo10 {
+    background: -webkit-linear-gradient(#000, #111);
+    background: linear-gradient(#000, #111);
+}
